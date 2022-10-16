@@ -3,7 +3,7 @@
 docker build -t http_server:1.0.0 .
 ```
 
-![img_build.jpg](https://github.com/JunJie957/cncamp-homework/blob/main/module3/img_build.jpg)
+![img_build.jpg](img_build.jpg)
 
 ### docker run
 ```sh
