@@ -3,7 +3,7 @@
 docker build -t http_server:1.0.0 .
 ```
 
-![img_build.png](img_build.png)
+![img_build.jpg](img_build.jpg)
 
 ### docker run
 ```sh
@@ -12,7 +12,7 @@ docker run --rm -d --name wang_http_test -p 18080:80 http_server:1.0.0
 docker ps | grep wang_http_test
 ```
 
-![img_run.png](img_run.png)
+![img_run.jpg](img_run.jpg)
 
 ### Create network ns
 
@@ -36,5 +36,5 @@ docker exec -it 042214a1e72a sh
 ip a
 ```
 
-![img_container.png](img_container.png)
+![img_container.jpg](img_container.jpg)
 
