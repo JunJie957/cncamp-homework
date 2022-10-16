@@ -3,16 +3,16 @@
 docker build -t http_server:1.0.0 .
 ```
 
-![img_1.png](img_1.png)
-
+![img_build.png](img_build.png)
 
 ### docker run
 ```sh
 docker images | grep http_server
 docker run --rm -d --name wang_http_test -p 18080:80 http_server:1.0.0
-docker ps
+docker ps | grep wang_http_test
 ```
-![img_2.png](img_2.png)
+
+![img_run.png](img_run.png)
 
 ### Create network ns
 
@@ -25,18 +25,16 @@ find -L /var/run/netns -type l -delete
 
 ```sh
 docker ps | grep http_server
-docker inspect 302ca0da7999 | grep -i pid
-nsenter -t 39506 -n ip a
+docker inspect 042214a1e72a | grep -i pid
+sudo nsenter -t 40200 -n ip a
 ```
 
-![img_4.png](img_4.png)
-
-
-Check Container Ip config
+###Check Container Ip config
 
 ```sh
-docker exec -it 302ca0da7999 sh
+docker exec -it 042214a1e72a sh
 ip a
 ```
 
-![img_5.png](img_5.png)
+![img_container.png](img_container.png)
+
